@@ -1,0 +1,21 @@
+<div>
+    <h2>Movie List</h2>
+    <hr/>
+
+    <!-- Allow user to enter a new movie, and add to list.
+        The input is bound to a property called "name" on the component
+        Button connects to an 'add_movie' method on the component -->
+    <input type="text" unicorn:model="name" />
+    <button unicorn:click="add_movie">Add Movie</button>
+
+    <!-- Allow user to delete all the movies from their list.
+        Connects to an 'delete_all' method on the component -->
+    <button unicorn:click="delete_all">Delete All</button>
+    
+    <!-- Show the existing movies, from the component's "movies" property -->
+    <ul>
+    {% for movie in movies %}
+        <li>{{ movie.name }}</li>
+    {% endfor %}
+    </ul>
+</div>
